@@ -1,0 +1,72 @@
+.tabBar {
+  background-color: #1e213a;
+}
+
+input {
+  border: 1px solid #e7e7eb;
+  box-sizing: border-box;
+  width: 268px;
+  height: 48px;
+  font-size: medium;
+}
+
+.search-btn {
+  width: 86px;
+  height: 48px;
+  background: #3c47e9;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #e7e7eb;
+}
+
+.search {
+  display: flex;
+  column-gap: 10px;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.popover {
+  background-color: #e7e7eb;
+  width: 268px;
+  height: 90px;
+  font-size: medium;
+  overflow: scroll;
+}
+
+.cities {
+  display: flex;
+  flex-direction: column;
+  width: 367px;
+  margin-left: 135px;
+  text-align: left;
+}
+
+.city-list {
+  list-style-type: none;
+  padding-left: 5px;
+}
+
+.city {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #e7e7eb;
+  background: none;
+  border: none;
+  left: 58px;
+  margin-top: 20px;
+  width: 367px;
+  height: 64px;
+  text-align: left;
+}
+
+.city:hover {
+  border: 1px solid #616475;
+  box-sizing: border-box;
+}

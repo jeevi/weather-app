@@ -1,0 +1,59 @@
+.card {
+  width: 328px;
+  height: 204px;
+  background: #1e213a;
+}
+
+.title {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #e7e7eb;
+}
+
+.pressure,
+.humidity,
+.visibility,
+.speed {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 64px;
+  color: #e7e7eb;
+  margin: 0;
+}
+
+.compass {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(180deg);
+  color: #e7e7eb;
+  border-radius: 50px;
+}
+
+.inline-data {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 5px;
+}
+
+.unit {
+  font-family: Raleway;
+  font-style: normal;
+  font-size: 36px;
+  line-height: 43px;
+  color: #e7e7eb;
+  margin: 15px 0px 30px 0px;
+}
+
+.direction {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #e7e7eb;
+}

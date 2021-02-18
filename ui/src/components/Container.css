@@ -1,0 +1,7 @@
+.outerDiv {
+  display: grid;
+  width: 1500px;
+  height: 1000px;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto;
+}

@@ -1,0 +1,33 @@
+.guage {
+  margin-left: 48px;
+}
+
+.numbers {
+  display: flex;
+  justify-content: space-between;
+  width: 229px;
+}
+
+.reading {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: #a09fb1;
+}
+
+.filler-guage {
+  width: 229px;
+  height: 8px;
+  background: #e7e7eb;
+  border-radius: 80px;
+  margin-bottom: -8px;
+}
+
+.filled {
+  height: 8px;
+  background: #ffec65;
+  border-radius: 80px;
+}
