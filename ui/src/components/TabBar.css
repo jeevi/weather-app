@@ -20,6 +20,7 @@ input {
   font-size: 16px;
   line-height: 19px;
   color: #e7e7eb;
+  cursor: pointer;
 }
 
 .search {
@@ -41,7 +42,7 @@ input {
   display: flex;
   flex-direction: column;
   width: 367px;
-  margin-left: 135px;
+  margin-left: 68px;
   text-align: left;
 }
 
@@ -69,4 +70,9 @@ input {
 .city:hover {
   border: 1px solid #616475;
   box-sizing: border-box;
+  cursor: pointer;
+}
+
+li {
+  cursor: pointer;
 }

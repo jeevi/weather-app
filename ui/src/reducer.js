@@ -13,29 +13,7 @@ import {
 const initialState = {
   fetchSearchOptionsStatus: FETCH_SEARCH_OPTIONS_READY,
   fetchWeatherStatus: FETCH_WEATHER_FOR_WOEID_READY,
-  weather: {
-    futureData:[
-      {
-        min_temp: 0,
-        max_temp: 0,
-        weather_state_abbr: '',
-        readableDate: '',
-      }
-    ],
-    todayRelevantData: {
-      air_pressure: 0,
-      humidity: 0,
-      id: 0,
-      the_temp: 0,
-      visibility: 0,
-      weather_state_abbr: '',
-      weather_state_name: '',
-      wind_direction: '',
-      wind_direction_compass: '',
-      wind_speed: 0,
-      readableDate: '',
-    },
-  },
+  weather: {},
   searchOptions: [],
 };
 

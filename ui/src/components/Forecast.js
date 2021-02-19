@@ -6,6 +6,9 @@ import {
   fetchWeather,
   fetchSearchOptions,
 } from '../actions/actions';
+import {
+  FETCH_WEATHER_FOR_WOEID_SUCCESS
+} from '../actions/actionTypes';
 import './Forecast.css';
 import FutureSnapshot from './FutureSnapshot';
 import AirPressure from './highlight-cards/AirPressure';
@@ -46,21 +49,28 @@ const Forecast = ({
   fetchWeatherStatus,
   fetchWeather,
 }) => {
-  console.log(weather, 'weather');
   const { futureData, todayRelevantData } = weather;
-  const { air_pressure, humidity, visibility, wind_direction, wind_direction_compass, wind_speed, ...otherData } = todayRelevantData;
-  return (
+  if (todayRelevantData) {
+    var { air_pressure, humidity, visibility, wind_direction, wind_direction_compass, wind_speed, ...otherData } = todayRelevantData;
+  }
+  return ( futureData && futureData.length && todayRelevantData ?
     <div className="forecast">
-        <div className="future">
-          {futureData && futureData.map(each => <FutureSnapshot data={each} />)}
-        </div>
-        <h2 className="heading">Today's Highlights</h2>
-        <div className="highlights">
-          <AirPressure pressure={air_pressure} />
-          <Humidity humidity={humidity} />
-          <Visibility visibility={visibility} />
-          <WindStatus speed={wind_speed} direction={wind_direction} compass={wind_direction_compass} />
-        </div>
+      <div className="unit-toggle">
+        
+      </div>
+      <div className="future">
+        {futureData && futureData.map(each => <FutureSnapshot data={each} />)}
+      </div>
+      <h2 className="heading">Today's Highlights</h2>
+      <div className="highlights">
+        <AirPressure pressure={air_pressure} />
+        <Humidity humidity={humidity} />
+        <Visibility visibility={visibility} />
+        <WindStatus speed={wind_speed} direction={wind_direction} compass={wind_direction_compass} />
+      </div>
+    </div> :
+    <div className="forecast">
+      <p className="default-screen">Welcome to the Weather app. Please search and select a city to see its weather forecast.</p>
     </div>
   );
 };

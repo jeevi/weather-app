@@ -13,9 +13,9 @@ const Gauge = ({ value }) => {
   return (
     <div className="guage">
       <div className="numbers">
-        <p className="reading">0</p>
-        <p className="reading">50</p>
-        <p className="reading">100</p>
+        <p className="reading">0%</p>
+        <p className="reading">50%</p>
+        <p className="reading">100%</p>
       </div>
       <div className="filler-guage"></div>
       <div className="filled" style={{ width: `${getPercentage()}px`}}></div>
