@@ -1,3 +1,7 @@
+import { useRef, useEffect } from 'react';
+import { isEqual } from 'lodash';
+import { UNIT } from './constants';
+
 const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'];
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -9,26 +13,7 @@ const getReadableDate = date => {
 export const getWeatherImage = icon => `https://www.metaweather.com/static/img/weather/${icon}.svg`;
 
 export const formattedData = data => {
-  /**
-   * for snapshot:
-   * - min temp
-   * - max temp
-   * - icon
-   * 
-   * 
-   * for highlights:
-   * - wind speed
-   * - wind direction
-   * - wind_direction_compass
-   * 
-   * - visibility
-   * 
-   * - humidity
-   * 
-   * - air_pressure
-   */
-
-  const { consolidated_weather } = data;
+  const { consolidated_weather, title } = data;
   const { 
     created,
     max_temp,
@@ -56,5 +41,42 @@ export const formattedData = data => {
     }
   });
 
-  return { futureData, todayRelevantData };
+  return { futureData, todayRelevantData, unit: UNIT.CELCIUS, title };
 };
+
+const cToF = temp => Math.round((temp * (9 / 5)) + 32);
+const fToC = temp => Math.round((temp - 32) * (5 / 9));
+
+export const toggleUnitOfTemperature = (unit, weather) => {
+  const { futureData, todayRelevantData } = weather;
+
+  if (!futureData || !todayRelevantData) {
+    return weather;
+  }
+
+  todayRelevantData.the_temp = unit === UNIT.FAHRENHEIT ? cToF(todayRelevantData.the_temp) : fToC(todayRelevantData.the_temp);
+
+  futureData.forEach(arr => {
+    arr.min_temp = unit === UNIT.FAHRENHEIT ? cToF(arr.min_temp) : fToC(arr.min_temp);
+    arr.max_temp = unit === UNIT.FAHRENHEIT ? cToF(arr.max_temp) : fToC(arr.max_temp);
+  });
+
+  return { ...weather, futureData, todayRelevantData, unit };
+}
+
+export function useDeepEffect(effectFunc, deps) {
+  const isFirst = useRef(true);
+  const prevDeps = useRef(deps);
+
+  useEffect(() => {
+    const isSame = prevDeps.current.every((obj, idx) => isEqual(obj, deps[idx]));
+    if (isFirst || !isSame) {
+      effectFunc();
+    }
+
+    isFirst.current = false;
+    prevDeps.current = deps;
+  }, deps)
+}
+
+export const getUnitAscii = unit => unit === UNIT.CELCIUS? "\u2103" : "\u2109";

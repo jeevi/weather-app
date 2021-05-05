@@ -1,5 +1,6 @@
 .tabBar {
   background-color: #1e213a;
+  position: relative;
 }
 
 input {
@@ -36,6 +37,7 @@ input {
   height: 90px;
   font-size: medium;
   overflow: scroll;
+  position: relative;
 }
 
 .cities {
@@ -75,4 +77,78 @@ input {
 
 li {
   cursor: pointer;
+}
+
+.today-weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 230px;
+}
+
+.today-inline-data {
+  width: auto;
+  height: 300px;
+}
+
+.today-weather-image {
+  width: 202px;
+  height: 234px;
+}
+
+.today-temp {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 144px;
+  line-height: 169px;
+  color: #e7e7eb;
+  display: inline-block;
+  margin-top: 50px;
+}
+
+.today-unit {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 57px;
+  color: #a09fb1;
+  display: inline-block;
+}
+
+.today-weather-state {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  color: #a09fb1;
+}
+
+.footer-text {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  display: inline-flex;
+  color: #88869d;
+}
+
+.go-back-btn {
+  position: absolute;
+  width: 161px;
+  height: 40px;
+  left: 46px;
+  top: 42px;
+  background: #6e707a;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.wait-spinner {
+  top: 50%;
+  left: 50%;
+  position: absolute;
 }

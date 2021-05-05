@@ -1,5 +1,6 @@
 .forecast {
   background-color: #100e1d;
+  position: relative;
 }
 
 .default-screen {
@@ -36,4 +37,32 @@
   grid-template-columns: min-content min-content;
   gap: 50px;
   margin-left: 150px;
+}
+
+.unit-toggle {
+  position: absolute;
+  top: 42px;
+  right: 145px;
+}
+
+.unit-toggle input[type="radio"] {
+  display: none;
+}
+
+.unit-toggle .radio {
+  background: #e7e7eb;
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.unit-toggle input[type="radio"]:checked + .radio {
+  background: #585676;
+}
+
+.wait-spinner {
+  top: 50%;
+  left: 50%;
+  position: absolute;
 }

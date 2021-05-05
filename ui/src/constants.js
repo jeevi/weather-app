@@ -1,0 +1,4 @@
+export const UNIT = {
+  CELCIUS: 'CELCIUS',
+  FAHRENHEIT: 'FAHRENHEIT',
+};
